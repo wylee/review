@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Review::VERSION
   spec.authors       = ["Wyatt Lee Baldwin"]
   spec.email         = ["wyatt.lee.baldwin@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = "Simple GitHub code review tool"
+  spec.summary       = ""
+  spec.homepage      = "https://github.com/wylee/review"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
