@@ -52,18 +52,18 @@ module Review
       data = pull_request.rels[:diff].get.data
       diff = Diff.new(data)
 
-      diff.files.each do |f|
-        if f.name =~ /^spec\//
+      diff.files.each do |file|
+        if file.name =~ /^spec\//
           return false
-        elsif INTERESTING_FILES.include?(f.name)
+        elsif INTERESTING_FILES.include?(file.name)
           return true
-        elsif INTERESTING_FILES.include?(f.original_name)
+        elsif INTERESTING_FILES.include?(file.original_name)
           return true
         end
 
-        f.lines.each do |l|
-          INTERESTING_PATTERNS.each do |p|
-            return true if l =~ p
+        file.lines.each do |line|
+          INTERESTING_PATTERNS.each do |pattern|
+            return true if line =~ pattern
           end
         end
       end
