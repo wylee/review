@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'review/command_line'
+Review::CommandLine.new.execute
